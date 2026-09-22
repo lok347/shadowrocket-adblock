@@ -90,13 +90,13 @@ DIRECT guard 必须位于对应社区 RULE-SET / REJECT 之前，因为 Shadowro
 
 ## 5. 版本规则
 
-- upstream 原始版本：例如 `v6.2`
-- 本仓库稳定版本：例如 `v6.2-lok.1`
-- 同一 upstream 基线上，每次本地稳定修订递增末位：
-  - `v6.2-lok.2`
-  - `v6.2-lok.3`
-- upstream 升级后重新起基线：
-  - `v6.3-lok.1`
+- upstream 版本与本仓库版本分开记录，不混用版本号。
+- upstream 原始版本：例如 `GY AdBlock v6.2`，仅作为来源基线记录。
+- 本仓库稳定版本采用独立序列：
+  - `AdBlock_lok.1`
+  - `AdBlock_lok.2`
+  - `AdBlock_lok.3`
+- upstream 升级不会自动重置本仓库版本号；只有实际发布本仓库新稳定版时才递增 `lok.x`。
 
 ## 6. 回滚
 
