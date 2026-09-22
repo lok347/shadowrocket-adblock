@@ -1,4 +1,4 @@
-#!name=AdBlock v6.2-lok.2
+#!name=AdBlock_lok.1
 #!desc=Layered blocking: DIRECT guards -> maintained AWAvenue RULE-SET -> static fallback -> precise rewrites -> allowlisted response cleaning. Stable self-hosted baseline.
 #!author=Y123456-hzy (upstream); lok347 (maintenance)
 #!homepage=https://github.com/lok347/shadowrocket-adblock
