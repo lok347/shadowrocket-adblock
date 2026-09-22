@@ -1,5 +1,16 @@
 # Changelog
 
+## v6.2-lok.2 — 2026-09-22
+
+命名清理版本，不改变广告过滤逻辑。
+
+### Changed
+
+- 模块显示名称统一为 `AdBlock v6.2-lok.2`。
+- Response Cleaner 文件由 `scripts/gy-startup-ads-clean.js` 更名为 `scripts/adblock-clean.js`。
+- Script 标识与调试前缀去除 `GY` 品牌前缀。
+- 稳定模块的所有 `script-path` 已切换到新文件名。
+
 本文件只记录 `lok347/shadowrocket-adblock` 自用维护版本的变化。
 
 ## v6.2-lok.1 — 2026-09-22
