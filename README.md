@@ -2,7 +2,9 @@
 
 Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
-当前稳定基线：**AdBlock v6.2-lok.2**
+当前稳定版本：**AdBlock_lok.1**
+
+当前 upstream 基线：**GY AdBlock v6.2**
 
 ## 来源与维护关系
 
