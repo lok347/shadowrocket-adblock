@@ -4,7 +4,7 @@
 // Safety model: route allowlist, strong ad markers, known containers, no broad key deletion.
 // v6 changes vs v5:
 // - container emptying uses cheap emptiness checks instead of JSON.stringify comparison;
-// - bilibili splash no longer fabricates a \`data\` object when the response has none;
+// - bilibili splash no longer fabricates a `data` object when the response has none;
 // - behavior contract unchanged: unknown route, non-JSON, or unmodified body pass through as-is.
 
 var DEBUG = false;
