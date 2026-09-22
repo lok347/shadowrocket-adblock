@@ -2,7 +2,7 @@
 
 Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
-当前稳定基线：**GY AdBlock v6.2-lok.1**
+当前稳定基线：**AdBlock v6.2-lok.2**
 
 ## 来源与维护关系
 
@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-
 
 模块引用的响应清理脚本：
 
-https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/gy-startup-ads-clean.js
+https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblock-clean.js
 
 ## 维护原则
 
@@ -57,7 +57,7 @@ https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/gy-st
 ## 文件
 
 - `Shadowrocket-AdBlock.sgmodule`：稳定模块
-- `scripts/gy-startup-ads-clean.js`：响应清理脚本
+- `scripts/adblock-clean.js`：响应清理脚本
 - `CHANGELOG.md`：本仓库变更记录
 - `docs/MAINTENANCE.md`：维护 SOP
 
