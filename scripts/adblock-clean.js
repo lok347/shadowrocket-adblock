@@ -1,4 +1,4 @@
-// AdBlock v6 response cleaner for Shadowrocket and Surge-compatible runtimes.
+// AdBlock_lok response cleaner for Shadowrocket and Surge-compatible runtimes.
 // Upstream: https://gist.github.com/Y123456-hzy/dd342a1a61daf8c250b112faa1381918
 // Maintained copy: https://github.com/lok347/shadowrocket-adblock
 // Safety model: route allowlist, strong ad markers, known containers, no broad key deletion.
@@ -87,7 +87,7 @@ var EMPTY_BILIBILI_SPLASH_KEYS = [
 
 function debug(message) {
   if (DEBUG && typeof console !== "undefined") {
-    console.log("[AdBlock-v6] " + message);
+    console.log("[AdBlock_lok] " + message);
   }
 }
 
