@@ -33,10 +33,20 @@ https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblo
 
 **可以自动跟随本仓库更新。** 使用固定链接添加远程模块，再开启 Shadowrocket 的模块自动更新；本仓库每两周维护一次，手机按设定间隔检查新版。
 
+### 添加现成 iOS 捷径
+
+**[下载 AdBlock_lok 更新入口捷径](https://github.com/lok347/shadowrocket-adblock/raw/refs/heads/main/shortcuts/AdBlock-lok-update.shortcut)**
+
+<a href="https://github.com/lok347/shadowrocket-adblock/raw/refs/heads/main/shortcuts/AdBlock-lok-update.shortcut"><img src="docs/assets/adblock-shortcut-download-qr.svg" width="240" alt="下载完整 AdBlock_lok 捷径的二维码"></a>
+
+用 Safari 点链接或扫码下载，打开下载的 `.shortcut` 文件，然后在「快捷指令」中按 **添加快捷指令**。动作和本仓库的固定模块链接均已预填，**无需自行创建动作或修改地址**。如果浏览器只保存文件，到「文件 → 下载」中点开它即可。
+
+运行捷径会打开 Shadowrocket 的模块安装/导入入口，可能仍需确认。自动后台更新按下方设置开启一次。此处提供完整的已签名捷径文件；目前未提供 iCloud 分享链接，尚未进行 iPhone 实机导入测试。
+
 ### 链接与 QR Code
 
 - [固定模块订阅链接](https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-AdBlock.sgmodule)：始终指向最新稳定版，适合自动更新。
-- [iOS 捷径设置说明](docs/IOS-AUTO-UPDATE.md)：创建一个打开 Shadowrocket 模块导入页的快捷入口。
+- [iOS 捷径安装与自动更新说明](docs/IOS-AUTO-UPDATE.md)：安装现成捷径及开启后台自动更新。
 
 | 固定订阅链接 | Shadowrocket 模块导入入口 |
 | --- | --- |
@@ -51,7 +61,7 @@ https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblo
 
 使用带日期的链接会一直读取该期文件；要跟随以后更新，请使用固定链接。后台更新由 iOS 调度，不保证在某个整点执行；重启手机或手动结束应用后，请重新打开一次 Shadowrocket。
 
-### 创建 iOS 捷径
+### 手动创建捷径（备用）
 
 在「快捷指令」中新建 **AdBlock_lok 更新入口**，依次添加 **URL** 和 **打开 URL** 两个动作。URL 内容如下，可复制使用：
 
@@ -104,6 +114,8 @@ shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Flok347%2
 - `CHANGELOG.md`：本仓库变更记录
 - `docs/MAINTENANCE.md`：维护 SOP
 - `docs/IOS-AUTO-UPDATE.md`：iOS 自动更新与捷径设置说明
+- `shortcuts/AdBlock-lok-update.shortcut`：预填固定模块链接的已签名 iOS 捷径
+- `shortcuts/AdBlock-lok-update.plist`：捷径动作源文件，供维护检查
 
 ## 安全说明
 
