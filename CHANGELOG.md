@@ -1,5 +1,23 @@
 # Changelog
 
+## AdBlock_lok.2 — 2026-10-07
+
+### Added
+
+- 加入 EasyList China 最近约两周新增的 162 条无条件域名过滤规则，以 DOMAIN-SUFFIX / REJECT 写入稳定模块。
+- 保存固定来源 SHA、逐域记录、Shadowrocket 规则清单及本期报告。
+
+### Preserved
+
+- 原有全部 REJECT、DIRECT guards、社区 RULE-SET、URL Rewrite、MITM hostname 与响应清理脚本保持不变。
+- 稳定订阅地址保持不变。
+
+### Validation
+
+- 格式、去重、来源增量、域名覆盖和白名单/源例外冲突检查通过。
+- 用户明确授权直接更新，未执行 iOS / App 实测。DNS 活跃性未完成核验；不将规则层检查描述为实机兼容保证。
+
+
 ## AdBlock_lok.1 — 2026-09-22
 
 命名清理版本，不改变广告过滤逻辑。

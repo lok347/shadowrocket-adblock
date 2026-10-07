@@ -2,7 +2,7 @@
 
 Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
-当前稳定版本：**AdBlock_lok.1**
+当前稳定版本：**AdBlock_lok.2**
 
 当前 upstream 基线：**GY AdBlock v6.2**
 
@@ -39,6 +39,8 @@ https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblo
 
 - `main`：稳定版，Shadowrocket 只订阅这里。
 - `dev`：新规则、兼容修复与上游同步测试。
+
+无条件域名增量完成来源、覆盖和冲突检查后可发布，并记录未实机测试状态；涉及混合业务接口、脚本或 MITM 的改动仍按维护 SOP 做兼容性验证。
 
 正常维护流程：
 
