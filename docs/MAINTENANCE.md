@@ -128,3 +128,18 @@ Shadowrocket 稳定订阅只指向 `main`。
 - HTTP 状态码
 - 响应 JSON 中可识别的广告字段（敏感值需脱敏）
 - 开启/关闭模块后的差异
+
+## 9. 双周新增域名搜集
+
+自 2026-10-07 起，每两周做一次增量搜集，下一次计划为 2026-10-21。默认通过 ChatGPT 双周任务执行，交付到本仓库 `dev` 与草稿 PR。
+
+1. 先读 main/dev 和最近 `docs/reviews/` 记录，固定当前本地模块与来源 commit/blob SHA。
+2. 查看 AWAvenue、EasyList China、EasyList、AdGuard 官方来源的新增规则和误封撤回。使用上一期源快照作基线，不根据名字猜测广告用途，不要求凑满新增数量。
+3. 对照本地 REJECT、AWAvenue 与 DIRECT guards 去重，按 DOMAIN / DOMAIN-SUFFIX / DOMAIN-KEYWORD 的实际语义核对；检查来源例外规则。
+4. 只把无路径、无条件的 `||domain^` 作为域名级候选。带 `$third-party`、`$domain`、资源类型或 path 的规则，必须保留原始限制，不能改成整个域名封锁。
+5. 保存 `docs/reviews/YYYY-MM-DD.md` 研究报告、同名 `.json` 逐域记录，以及 `rules/candidates/YYYY-MM-DD.list` 待测规则。记录来源、时间范围、覆蓋/冲突、用途证据、核验状态与不确定项。
+6. 执行格式、重复、来源新增、覆盖、DIRECT/例外冲突和订阅隔离检查。候选文件不应被稳定模块自动引用。
+7. DNS 查询失败不等于域名失效；来源名单收录也不等于已证明纯广告用途。缺少用途证据、接口核验或实机测试时保留待测，不合并稳定模块、不扩大 MITM、不修改 response cleaner。
+8. 按本 SOP 第 3 节完成相应 App 的核心功能测试后，才提出稳定版规则修改。只提交报告或候选文件时，不递增 `AdBlock_lok.x`。
+
+本期任务只在对话回报报告 / PR 链接，不发送邮件。没有适合新增时也应保存检查结果和重要来源修正，不能为了定期更新而叠加无依据的规则。
