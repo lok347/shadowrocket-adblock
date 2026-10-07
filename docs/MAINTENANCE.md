@@ -91,15 +91,14 @@ DIRECT guard 必须位于对应社区 RULE-SET / REJECT 之前，因为 Shadowro
 
 此时优先撤销最近规则，或把 SDK 基础域名加入 DIRECT guard，再用精确 Rewrite 处理广告接口。
 
-## 5. 版本规则
+## 5. 版本与文件命名
 
-- upstream 版本与本仓库版本分开记录，不混用版本号。
-- upstream 原始版本：例如 `GY AdBlock v6.2`，仅作为来源基线记录。
-- 本仓库稳定版本采用独立序列：
-  - `AdBlock_lok.1`
-  - `AdBlock_lok.2`
-  - `AdBlock_lok.3`
-- upstream 升级不会自动重置本仓库版本号；只有实际发布本仓库新稳定版时才递增 `lok.x`。
+- upstream 版本与本仓库日期版本分开记录；`GY AdBlock v6.2` 只作为来源基线。
+- 从 2026-10-07 起，本仓库显示名称使用 `AdBlock_lok.YYYYMMDD`，例如 `AdBlock_lok.20261007`。
+- GitHub 日期文件与下载副本统一使用 `Shadowrocket-AdBlock-lok.YYYYMMDD.sgmodule`，日期取实际发布更新日（Asia/Shanghai）。
+- 每次发布新日期文件，并同步固定入口 `Shadowrocket-AdBlock.sgmodule`，两份必须逐字节一致，以便现有订阅继续获取最新版。
+- README、CHANGELOG、审查 JSON 的版本与日期文件名同步。仅检查未发布时不修改日期标记；同日再次更新仍使用当日日期，由 Git 提交历史区分。
+- 不再递增数字序号。历史已发布版本名称和来源记录可保留，用于追溯与回滚。
 
 ## 6. 回滚
 
@@ -143,6 +142,6 @@ Shadowrocket 稳定订阅只指向 `main`。
 5. 保存 `docs/reviews/YYYY-MM-DD.md` 研究报告、同名 `.json` 逐域记录，以及 `rules/candidates/YYYY-MM-DD.list` 待测规则。记录来源、时间范围、覆蓋/冲突、用途证据、核验状态与不确定项。
 6. 执行格式、重复、来源新增、覆盖、DIRECT/例外冲突和订阅隔离检查。候选文件不应被稳定模块自动引用。
 7. DNS 查询失败不等于域名失效；来源名单收录也不等于已证明纯广告用途。官方社区来源的无条件域名过滤条目通过增量、匹配条件、覆盖和冲突检查后，可直接加入稳定模块，记录未实机验证状态。存在混合业务、DIRECT / 例外冲突或来源限制无法保留的条目继续待核验，不扩大 MITM、不修改 response cleaner。
-8. 涉及接口、脚本、MITM 或 SDK 基础服务时，按本 SOP 第 3 节完成相应 App 的核心功能测试。无条件域名增量按用户授权完成规则层检查后，经 dev / Diff 再更新 main；只有真正发布稳定模块时才递增 `AdBlock_lok.x`，仅报告或候选文件不递增。
+8. 涉及接口、脚本、MITM 或 SDK 基础服务时，按本 SOP 第 3 节完成相应 App 的核心功能测试。无条件域名增量按用户授权完成规则层检查后，经 dev / Diff 再更新 main；只有真正发布稳定模块时才更新 `AdBlock_lok.YYYYMMDD` 日期标记，仅报告或候选文件不递增。
 
 本期任务只在对话回报报告 / PR 链接，不发送邮件。没有适合新增时也应保存检查结果和重要来源修正，不能为了定期更新而叠加无依据的规则。
