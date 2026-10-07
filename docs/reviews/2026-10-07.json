@@ -1197,11 +1197,13 @@
     }
   ],
   "release": {
-    "version": "AdBlock_lok.2",
+    "version": "AdBlock_lok.20261007",
     "date": "2026-10-07",
     "device_testing": false,
     "authorization": "User explicitly requested immediate overwrite/release on 2026-10-07.",
-    "stable_module": "Shadowrocket-AdBlock.sgmodule",
-    "added_domain_rules": 162
+    "stable_module": "Shadowrocket-AdBlock-lok.20261007.sgmodule",
+    "added_domain_rules": 162,
+    "subscription_module": "Shadowrocket-AdBlock.sgmodule",
+    "naming_scheme": "YYYYMMDD"
   }
 }

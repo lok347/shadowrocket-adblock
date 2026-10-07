@@ -2,7 +2,7 @@
 
 Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
-当前稳定版本：**AdBlock_lok.2**
+当前稳定版本：**AdBlock_lok.20261007**
 
 当前 upstream 基线：**GY AdBlock v6.2**
 
@@ -17,7 +17,11 @@ Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
 ## Shadowrocket 导入
 
-稳定模块：
+本期日期文件：
+
+https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-AdBlock-lok.20261007.sgmodule
+
+固定订阅入口（每次与最新日期文件同步）：
 
 https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-AdBlock.sgmodule
 
@@ -60,7 +64,8 @@ https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblo
 
 ## 文件
 
-- `Shadowrocket-AdBlock.sgmodule`：稳定模块
+- `Shadowrocket-AdBlock-lok.20261007.sgmodule`：本期稳定模块，日期格式 `YYYYMMDD`
+- `Shadowrocket-AdBlock.sgmodule`：固定订阅入口，与最新日期文件内容一致
 - `scripts/adblock-clean.js`：响应清理脚本
 - `CHANGELOG.md`：本仓库变更记录
 - `docs/MAINTENANCE.md`：维护 SOP

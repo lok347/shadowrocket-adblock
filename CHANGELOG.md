@@ -1,6 +1,12 @@
 # Changelog
 
-## AdBlock_lok.2 — 2026-10-07
+## AdBlock_lok.20261007 — 2026-10-07
+
+### Naming
+
+- 本次发布名称由 `AdBlock_lok.2` 改为 `AdBlock_lok.20261007`，以后以实际更新日期 `YYYYMMDD` 标识。
+- GitHub 与下载副本统一使用 `Shadowrocket-AdBlock-lok.20261007.sgmodule`；固定订阅入口 `Shadowrocket-AdBlock.sgmodule` 与日期文件保持相同内容。
+- 本次仅同步名称、文件名和文档，过滤规则未改变。
 
 ### Added
 
