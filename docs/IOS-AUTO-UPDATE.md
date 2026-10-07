@@ -2,6 +2,20 @@
 
 推荐使用 Shadowrocket 自带的模块自动后台更新。捷径提供方便的手动导入入口，不能代替后台更新设置。
 
+## 添加现成捷径，无需自己搭建
+
+**[下载完整的 AdBlock_lok 更新入口捷径](https://github.com/lok347/shadowrocket-adblock/raw/refs/heads/main/shortcuts/AdBlock-lok-update.shortcut)**
+
+<a href="https://github.com/lok347/shadowrocket-adblock/raw/refs/heads/main/shortcuts/AdBlock-lok-update.shortcut"><img src="assets/adblock-shortcut-download-qr.svg" width="280" alt="下载完整 AdBlock_lok 捷径的二维码"></a>
+
+1. 在 iPhone Safari 中打开下载链接，或扫码下载。
+2. 点开下载的 `.shortcut` 文件；如果浏览器只保存文件，在「文件 → 下载」中打开它。
+3. 在快捷指令的导入界面按「添加快捷指令」。无需修改 URL，也无需自行添加动作。
+
+捷径已预填本仓库固定链接，只有一项执行动作：打开 Shadowrocket 的远程模块安装/导入入口。首次运行可能询问是否允许打开 Shadowrocket，模块导入也可能需要确认。完整文件已经过公开的 HubSign 服务签名；动作源文件保留在 [`shortcuts/AdBlock-lok-update.plist`](../shortcuts/AdBlock-lok-update.plist)，便于检查。
+
+本链接分发的是已签名文件，不是 iCloud 分享链接。目前尚未做 iPhone 实机导入及运行测试。
+
 ## 固定订阅链接
 
 [打开或复制固定链接](https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-AdBlock.sgmodule)
@@ -24,7 +38,7 @@ https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-
 
 后台执行时间由 iOS 安排，不保证精确到点。手机重启或应用被手动结束后，重新打开一次 Shadowrocket，让应用恢复后台任务。
 
-## 创建快捷指令
+## 手动创建快捷指令（备用）
 
 1. 打开 iOS「快捷指令」，新建快捷指令并命名为「AdBlock_lok 更新入口」。
 2. 添加「URL」动作，粘贴下面完整地址。
@@ -55,3 +69,5 @@ shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Flok347%2
 - [LOWERTOP 社区使用手册：自动更新](https://github.com/LOWERTOP/Shadowrocket#自动更新)
 - [LOWERTOP 社区使用手册：模块](https://github.com/LOWERTOP/Shadowrocket#模块)
 - [LOWERTOP 社区使用手册：URL Schemes](https://github.com/LOWERTOP/Shadowrocket#url-schemes)
+- [Apple：共享快捷指令（iCloud 或文件）](https://support.apple.com/guide/shortcuts/share-shortcuts-apdf01f8c054/ios)
+- [Cherri：使用 RoutineHub HubSign 签名](https://cherrilang.org/compiler/signing.html)
