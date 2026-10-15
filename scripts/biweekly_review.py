@@ -90,7 +90,7 @@ def exception_conflicts(domain: str, exceptions: set[str]) -> list[str]:
 
 
 def next_due(day: dt.date) -> bool:
-    return day >= EPOCH and (day - EPOCH).days % 14 == 0
+    return day >= EPOCH and (day - EPOCH).days % 7 == 0
 
 
 def http_read(url: str, accept: str = "text/plain") -> str:

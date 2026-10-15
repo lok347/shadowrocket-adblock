@@ -2,7 +2,7 @@
 
 Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
-当前稳定版本：**AdBlock_lok.20261007**
+当前稳定版本：**AdBlock_lok.20261015**
 
 当前 upstream 基线：**GY AdBlock v6.2**
 
@@ -19,7 +19,7 @@ Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
 本期日期文件：
 
-https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-AdBlock-lok.20261007.sgmodule
+https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-AdBlock-lok.20261015.sgmodule
 
 固定订阅入口（每次与最新日期文件同步）：
 
@@ -31,7 +31,7 @@ https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblo
 
 ## iOS 捷径与自动更新
 
-**可以自动跟随本仓库更新。** 使用固定链接添加远程模块，再开启 Shadowrocket 的模块自动更新；本仓库每两周维护一次，手机按设定间隔检查新版。
+**可以自动跟随本仓库更新。** 使用固定链接添加远程模块，再开启 Shadowrocket 的模块自动更新；本仓库从 2026-10-15 起每周三审查一次上游更新，规则经审核发布后，手机按设定间隔检查新版。
 
 ### 添加现成 iOS 捷径
 
@@ -88,7 +88,7 @@ shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Flok347%2
 - `main`：稳定版，Shadowrocket 只订阅这里。
 - `dev`：新规则、兼容修复与上游同步测试。
 
-无条件域名增量完成来源、覆盖和冲突检查后可发布，并记录未实机测试状态；涉及混合业务接口、脚本或 MITM 的改动仍按维护 SOP 做兼容性验证。
+无条件域名增量完成来源、覆盖和冲突检查后，可在获得明确发布授权时发布，并记录未实机测试状态；涉及混合业务接口、脚本或 MITM 的改动仍按维护 SOP 做兼容性验证。
 
 正常维护流程：
 
@@ -108,7 +108,7 @@ shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Flok347%2
 
 ## 文件
 
-- `Shadowrocket-AdBlock-lok.20261007.sgmodule`：本期稳定模块，日期格式 `YYYYMMDD`
+- `Shadowrocket-AdBlock-lok.20261015.sgmodule`：本期稳定模块，日期格式 `YYYYMMDD`
 - `Shadowrocket-AdBlock.sgmodule`：固定订阅入口，与最新日期文件内容一致
 - `scripts/adblock-clean.js`：响应清理脚本
 - `CHANGELOG.md`：本仓库变更记录

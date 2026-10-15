@@ -1,10 +1,10 @@
-# 双周审查自动化（MVP）
+# 每周审查自动化（MVP）
 
 此工作流仅做**审查和候选收集**，不会直接改变 Shadowrocket 生效规则。现有固定订阅链接、iOS 捷径和日期归档保持不变。
 
 ## 工作原理
 
-- `.github/workflows/adblock-review.yml` 每周三北京时间 09:17 触发，但仅在相对 **2026-10-21** 的 14 天整周期执行。
+- `.github/workflows/adblock-review.yml` 每周三北京时间 09:17 触发，但仅在相对 **2026-10-21** 的 7 天整周期执行。
 - `workflow_dispatch` 支持手动 Dry-run（默认开启）。2026-10-14 可手动执行 Dry-run，不改变下一周期基准。
 - 从最近的 `docs/reviews/*.json` 获取固定来源 SHA，读取该 Commit 下的 EasyList China 基线；获取新的 EasyList China、AWAvenue、EasyList 的固定 Commit 与文件 Blob SHA。校验下载内容的 Git blob SHA，失败则停止。
 - 仅采纳字面形式为 `||domain^`、没有 path、modifier、资源类型及域名限制的条目作为来源新增域名；其他过滤语法不自动转换。

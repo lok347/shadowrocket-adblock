@@ -13,7 +13,7 @@ class ReviewTests(unittest.TestCase):
     def test_calendar_anchor(self):
         self.assertFalse(r.next_due(dt.date(2026, 10, 14)))
         self.assertTrue(r.next_due(dt.date(2026, 10, 21)))
-        self.assertFalse(r.next_due(dt.date(2026, 10, 28)))
+        self.assertTrue(r.next_due(dt.date(2026, 10, 28)))
         self.assertTrue(r.next_due(dt.date(2026, 11, 4)))
 
     def test_strict_filter_conditions(self):
