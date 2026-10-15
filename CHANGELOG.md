@@ -1,5 +1,21 @@
 # Changelog
 
+## AdBlock_lok.20261015 — 2026-10-15
+
+### Added
+- 根据 EasyList China 最新固定 Commit `dcc067a21ac9628d117349303933efd0ddefa08e`，相对 2026-10-07 基线新增 88 条无路径、无修饰条件的 `||domain^`，转为 `DOMAIN-SUFFIX,REJECT`。
+- 同期来源移除 414 条无条件域名规则；2026-10-07 发布的 162 条均仍在来源中，无需因本次撤回删除。
+- 保存本期来源 SHA、撤回列表、逐域审查和候选规则文件。
+
+### Maintenance cadence
+- 从双周审查调整为每周审查，计划每周三北京时间约 09:17 运行；仅自动创建候选和 Draft PR，稳定版仍需人工授权发布。
+
+### Preserved and risks
+- 现有 DIRECT guards、社区 RULE-SET、URL Rewrite、MITM、`scripts/adblock-clean.js`、iOS 捷径均不修改；固定订阅入口与当期日期文件内容保持完全一致。
+- 本期未进行 iPhone 或 App 实机验证。无条件域名增量不保证修复具体 App 的开屏广告；混合业务 API 需独立抓日志分析。
+- 依据 2026-10-07 对无条件域名增量的已有发布授权及本次 2026-10-15 立即更新要求发布，保留回滚历史。
+
+
 ## AdBlock_lok.20261007 — 2026-10-07
 
 ### Naming

@@ -1,8 +1,8 @@
-name: Biweekly AdBlock review (candidate-only)
+name: Weekly AdBlock review (candidate-only)
 
 on:
   schedule:
-    # 09:17 Asia/Shanghai every Wednesday; date gate below enforces 14-day cadence.
+    # 09:17 Asia/Shanghai every Wednesday; weekly date gate starts 2026-10-21.
     - cron: '17 1 * * 3'
   workflow_dispatch:
     inputs:
@@ -63,7 +63,7 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -v
           python3 scripts/biweekly_review.py validate
-      - name: Enforce biweekly date gate
+      - name: Enforce weekly date gate
         id: gate
         env:
           EVENT_NAME: ${{ github.event_name }}
