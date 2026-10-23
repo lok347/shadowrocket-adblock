@@ -1,0 +1,475 @@
+#!name=AdBlock_lok.20261023
+#!desc=Layered blocking: DIRECT guards -> AWAvenue RULE-SET -> static fallback -> precise rewrites -> allowlisted cleaning. +62 reviewed domain rules (2026-10-23); untested on iOS.
+#!author=Y123456-hzy (upstream); lok347 (maintenance)
+#!homepage=https://github.com/lok347/shadowrocket-adblock
+#!system=ios
+# Upstream: https://gist.github.com/Y123456-hzy/dd342a1a61daf8c250b112faa1381918
+
+[General]
+always-reject-url-rewrite = false
+force-http-engine-hosts = %APPEND% app.bilibili.com,app.biliapi.net,api.bilibili.com,api.vc.bilibili.com,acs.m.taobao.com,guide-acs.m.taobao.com,acs.m.goofish.com,poplayer.template.alibaba.com,api.m.jd.com,api.yangkeduo.com,api.pinduoduo.com,api.zhihu.com,web-render.zhihu.com,wmapi.meituan.com,api.xueqiu.com,api.mcd.cn,res.kfc.com.cn,dynamicad.kfc.com.cn,m5.amap.com,newclient.map.baidu.com,app.58.com,api-access.pangolin-sdk-toutiao.com,api-access.pangolin-sdk-toutiao1.com,api-access.pangolin-sdk-toutiao-b.com,api.pangolin-sdk-toutiao.com,api.pangolin-sdk-toutiao1.com,api.pangolin-sdk-toutiao-b.com,gromore.pangolin-sdk-toutiao.com,ether-pack.pangolin-sdk-toutiao.com,sf3-fe-tos.pglstatp-toutiao.com,sf6-fe-tos.pglstatp-toutiao.com,mi.gdt.qq.com,v2mi.gdt.qq.com,win.gdt.qq.com,mobads.baidu.com,afd.baidu.com,optimus-ads.amap.com,amap-aos-info-nogw.amap.com,images.pinduoduo.com,router-app-api.jdcloud.com,ad.12306.cn,api.chelaile.net.cn,web.chelaile.net.cn,app-gw.csdn.net,gab.122.gov.cn,ssp.soulapp.cn,fuss10.elemecdn.com
+
+[Rule]
+# --- Layer 1: DIRECT guards (must stay first; first match wins). ---
+# Coolapk SDK handshakes, config and telemetry must not be domain-rejected,
+# otherwise the SDKs retry-storm and freeze the app. Ad payload fetches on
+# these domains are still blocked by the precise URL Rewrites below.
+DOMAIN-SUFFIX,gdt.qq.com,DIRECT
+DOMAIN-SUFFIX,e.qq.com,DIRECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,DIRECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com,DIRECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao2.com,DIRECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao3.com,DIRECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao4.com,DIRECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao5.com,DIRECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,DIRECT
+DOMAIN-SUFFIX,umeng.com,DIRECT
+DOMAIN-SUFFIX,umengcloud.com,DIRECT
+DOMAIN,umengacs.m.taobao.com,DIRECT
+DOMAIN,umengjmacs.m.taobao.com,DIRECT
+DOMAIN,adashbc.ut.taobao.com,DIRECT
+DOMAIN,adashxgc.ut.taobao.com,DIRECT
+# Coolapk startup dependencies rejected by AWAvenue.
+# Rejecting Baichuan correlates with stalling before /v6/main/init.
+DOMAIN,baichuan-sdk.alicdn.com,DIRECT
+DOMAIN,ios.bugly.qq.com,DIRECT
+DOMAIN,mazu.m.qq.com,DIRECT
+DOMAIN,tmfmazu.m.qq.com,DIRECT
+# Bytedance TNC config service: required by Pangle SDK startup.
+# v6.1: device log showed AWAvenue also rejects TNC on snssdk.com /
+# bytedance.com / toutiaoapi.com, so guard all four domain families.
+DOMAIN,tnc0-aliec2.zijieapi.com,DIRECT
+DOMAIN,tnc0-alisc1.zijieapi.com,DIRECT
+DOMAIN,tnc0-bjlgy.zijieapi.com,DIRECT
+DOMAIN,tnc3-aliec2.zijieapi.com,DIRECT
+DOMAIN,tnc3-alisc1.zijieapi.com,DIRECT
+DOMAIN,tnc3-alisc2.zijieapi.com,DIRECT
+DOMAIN,tnc3-bjlgy.zijieapi.com,DIRECT
+DOMAIN,tnc3-aliec1.toutiaoapi.com,DIRECT
+DOMAIN,tnc3-aliec2.toutiaoapi.com,DIRECT
+DOMAIN,tnc3-alisc1.toutiaoapi.com,DIRECT
+DOMAIN,tnc3-bjlgy.toutiaoapi.com,DIRECT
+DOMAIN,tnc3-aliec2.snssdk.com,DIRECT
+DOMAIN,tnc3-alisc1.snssdk.com,DIRECT
+DOMAIN,tnc3-bjlgy.snssdk.com,DIRECT
+DOMAIN,tnc3-aliec2.bytedance.com,DIRECT
+DOMAIN,tnc3-alisc1.bytedance.com,DIRECT
+DOMAIN,tnc3-bjlgy.bytedance.com,DIRECT
+
+# --- Layer 2: maintained community rule-set (TG-Twilight/AWAvenue-Ads-Rule). ---
+# 900+ ad/tracking domains, continuously updated upstream. Guards above
+# shield the Coolapk-sensitive SDK domains from this list.
+RULE-SET,https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list,REJECT
+
+# --- Layer 3: static fallback (works even if the RULE-SET fails to download). ---
+DOMAIN-SUFFIX,doubleclick.net,REJECT
+DOMAIN-SUFFIX,googlesyndication.com,REJECT
+DOMAIN-SUFFIX,googleadservices.com,REJECT
+DOMAIN-SUFFIX,adservice.google.com,REJECT
+DOMAIN-SUFFIX,admob.com,REJECT
+DOMAIN-SUFFIX,adsrvr.org,REJECT
+DOMAIN-SUFFIX,adnxs.com,REJECT
+DOMAIN-SUFFIX,criteo.com,REJECT
+DOMAIN-SUFFIX,pubmatic.com,REJECT
+DOMAIN-SUFFIX,rubiconproject.com,REJECT
+DOMAIN-SUFFIX,taboola.com,REJECT
+DOMAIN-SUFFIX,outbrain.com,REJECT
+DOMAIN-SUFFIX,moatads.com,REJECT
+DOMAIN-SUFFIX,doubleverify.com,REJECT
+DOMAIN-SUFFIX,applovin.com,REJECT
+DOMAIN-SUFFIX,inmobi.com,REJECT
+DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
+DOMAIN-SUFFIX,pangolin-dsp-toutiao.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN-SUFFIX,ad.toutiao.com,REJECT
+DOMAIN-SUFFIX,gdtimg.cn,REJECT
+DOMAIN-SUFFIX,gdtimg.com,REJECT
+DOMAIN-SUFFIX,mobads.baidu.com,REJECT
+DOMAIN-SUFFIX,afd.baidu.com,REJECT
+DOMAIN-SUFFIX,cpro.baidu.com,REJECT
+DOMAIN-SUFFIX,pos.baidu.com,REJECT
+DOMAIN-SUFFIX,wangmeng.baidu.com,REJECT
+DOMAIN-SUFFIX,eclick.baidu.com,REJECT
+DOMAIN-SUFFIX,alimama.com,REJECT
+DOMAIN-SUFFIX,mmstat.com,REJECT
+DOMAIN-SUFFIX,adkwai.com,REJECT
+DOMAIN-SUFFIX,adbkwai.com,REJECT
+DOMAIN-SUFFIX,adukwai.com,REJECT
+DOMAIN-SUFFIX,open.e.kuaishou.com,REJECT
+DOMAIN-SUFFIX,sigmob.cn,REJECT
+DOMAIN-SUFFIX,datads.cn,REJECT
+DOMAIN-SUFFIX,ubixioe.com,REJECT
+DOMAIN-SUFFIX,fancyapi.com,REJECT
+DOMAIN-SUFFIX,advlion.com,REJECT
+DOMAIN,cm.bilibili.com,REJECT
+DOMAIN,data.bilibili.com,REJECT
+DOMAIN,popup3.jd.com,REJECT
+
+# --- Reviewed source domain additions: AdBlock_lok.20261007 / 2026-10-07. ---
+# Source: EasyList China / The EasyList authors; GPL-3.0-or-later.
+# License: https://easylist.to/pages/licence.html
+# Evidence: https://github.com/easylist/easylistchina/compare/d55bc991350c4a62b9948063296f96e2367dee11...4dc5164ae67682ba3b59a0903d80f2b1ec26ef3f
+# Source-rule review passed; released by user authorization without iOS device testing.
+DOMAIN-SUFFIX,0bhl1k9hi.com,REJECT
+DOMAIN-SUFFIX,0cvo4ebbpk.com,REJECT
+DOMAIN-SUFFIX,0fs3mb0hh7.com,REJECT
+DOMAIN-SUFFIX,0i2nax2di.com,REJECT
+DOMAIN-SUFFIX,1o23ptd0sv.com,REJECT
+DOMAIN-SUFFIX,23dx6xe42.com,REJECT
+DOMAIN-SUFFIX,2hqxy07fw.com,REJECT
+DOMAIN-SUFFIX,2ju7b73ton.com,REJECT
+DOMAIN-SUFFIX,2ka41vagh.com,REJECT
+DOMAIN-SUFFIX,2lcdjyf37f.com,REJECT
+DOMAIN-SUFFIX,2wg8pp90e.com,REJECT
+DOMAIN-SUFFIX,3d2uemn8c.com,REJECT
+DOMAIN-SUFFIX,3f1l3f80xm.com,REJECT
+DOMAIN-SUFFIX,3vkgutjorg.com,REJECT
+DOMAIN-SUFFIX,3ylj411rdn.com,REJECT
+DOMAIN-SUFFIX,4mwe9ki9r.com,REJECT
+DOMAIN-SUFFIX,4ppj7n846t.com,REJECT
+DOMAIN-SUFFIX,54ad.net,REJECT
+DOMAIN-SUFFIX,588677.xyz,REJECT
+DOMAIN-SUFFIX,59ufs4hof5.com,REJECT
+DOMAIN-SUFFIX,5e9rwtjh1s.com,REJECT
+DOMAIN-SUFFIX,5jj6zcxpo.com,REJECT
+DOMAIN-SUFFIX,5n131lck8.com,REJECT
+DOMAIN-SUFFIX,5xg31saxfv.com,REJECT
+DOMAIN-SUFFIX,6aqqzbehy.com,REJECT
+DOMAIN-SUFFIX,6ign0q6xb1.com,REJECT
+DOMAIN-SUFFIX,6qcvth5fb.com,REJECT
+DOMAIN-SUFFIX,6ulv19ce9.com,REJECT
+DOMAIN-SUFFIX,6y10di5jko.com,REJECT
+DOMAIN-SUFFIX,754nyfabh6.com,REJECT
+DOMAIN-SUFFIX,8896bhfg6l.com,REJECT
+DOMAIN-SUFFIX,8hvq8jskh.com,REJECT
+DOMAIN-SUFFIX,8n2iu6djx6.com,REJECT
+DOMAIN-SUFFIX,8tjomzqlw.com,REJECT
+DOMAIN-SUFFIX,9qvpcta0t.com,REJECT
+DOMAIN-SUFFIX,adbfkaoxvm.in,REJECT
+DOMAIN-SUFFIX,asrxwyud2.com,REJECT
+DOMAIN-SUFFIX,b11tuokk6g.com,REJECT
+DOMAIN-SUFFIX,b56iy3m1jg.com,REJECT
+DOMAIN-SUFFIX,ballast85.top,REJECT
+DOMAIN-SUFFIX,baztfhhqiuvttm.com,REJECT
+DOMAIN-SUFFIX,bedwlzqwkxpzfc.com,REJECT
+DOMAIN-SUFFIX,bpucmkg.com,REJECT
+DOMAIN-SUFFIX,btsel5g.com,REJECT
+DOMAIN-SUFFIX,bulwark37.top,REJECT
+DOMAIN-SUFFIX,buyrbto5z2.com,REJECT
+DOMAIN-SUFFIX,c3mx41iik.com,REJECT
+DOMAIN-SUFFIX,c5krw17gn0.com,REJECT
+DOMAIN-SUFFIX,c5mj81yuuo.com,REJECT
+DOMAIN-SUFFIX,compass12.top,REJECT
+DOMAIN-SUFFIX,cutwater39.com,REJECT
+DOMAIN-SUFFIX,dishwasher46.com,REJECT
+DOMAIN-SUFFIX,dsm3y3tl4.com,REJECT
+DOMAIN-SUFFIX,e7x2ccuv9.com,REJECT
+DOMAIN-SUFFIX,ehcecws.com,REJECT
+DOMAIN-SUFFIX,esaqwot.com,REJECT
+DOMAIN-SUFFIX,eux6eonqhd.com,REJECT
+DOMAIN-SUFFIX,ew0ctzt3vd.com,REJECT
+DOMAIN-SUFFIX,f1x12og38.com,REJECT
+DOMAIN-SUFFIX,fwlkegiqfn.icu,REJECT
+DOMAIN-SUFFIX,g6f0w30cze.com,REJECT
+DOMAIN-SUFFIX,gangway97.com,REJECT
+DOMAIN-SUFFIX,gcqgmgq.com,REJECT
+DOMAIN-SUFFIX,gcvns12jp.com,REJECT
+DOMAIN-SUFFIX,gfehmnq5e.com,REJECT
+DOMAIN-SUFFIX,gp2mi428s.com,REJECT
+DOMAIN-SUFFIX,gzx2d0jvwm.com,REJECT
+DOMAIN-SUFFIX,h32rbpk7ne.com,REJECT
+DOMAIN-SUFFIX,hdry1a0g9.com,REJECT
+DOMAIN-SUFFIX,ht55hm12n2.com,REJECT
+DOMAIN-SUFFIX,htazjxk.com,REJECT
+DOMAIN-SUFFIX,hweianpqxl.icu,REJECT
+DOMAIN-SUFFIX,i27jhc4ut0.com,REJECT
+DOMAIN-SUFFIX,ifnb6hfem.com,REJECT
+DOMAIN-SUFFIX,ihbkqdj55.com,REJECT
+DOMAIN-SUFFIX,j3ossmqgmc.com,REJECT
+DOMAIN-SUFFIX,jqopurafw.com,REJECT
+DOMAIN-SUFFIX,js1lw9n6w.com,REJECT
+DOMAIN-SUFFIX,jxvylwrra.com,REJECT
+DOMAIN-SUFFIX,k8t39fu2n.com,REJECT
+DOMAIN-SUFFIX,k9x1d1uuj0.com,REJECT
+DOMAIN-SUFFIX,kpymx56ch3.com,REJECT
+DOMAIN-SUFFIX,ktgyslaux8.com,REJECT
+DOMAIN-SUFFIX,kvfskyv6h7.com,REJECT
+DOMAIN-SUFFIX,kwgvshdzl.com,REJECT
+DOMAIN-SUFFIX,l8rbwdji18.com,REJECT
+DOMAIN-SUFFIX,lelzbtm2o.com,REJECT
+DOMAIN-SUFFIX,lfxm6qdn0.com,REJECT
+DOMAIN-SUFFIX,lk54dfg87.com,REJECT
+DOMAIN-SUFFIX,ltdzz.com,REJECT
+DOMAIN-SUFFIX,lurhtbf.com,REJECT
+DOMAIN-SUFFIX,m96v7deg59.com,REJECT
+DOMAIN-SUFFIX,n2nqp4osu.com,REJECT
+DOMAIN-SUFFIX,n7xy4mz7pw.com,REJECT
+DOMAIN-SUFFIX,ngowvulz.com,REJECT
+DOMAIN-SUFFIX,o17kbwlq9p.com,REJECT
+DOMAIN-SUFFIX,odj3j8dsff.com,REJECT
+DOMAIN-SUFFIX,ojobjjol7.com,REJECT
+DOMAIN-SUFFIX,ovgadhtcyvak.in,REJECT
+DOMAIN-SUFFIX,oysdzwzivk.com,REJECT
+DOMAIN-SUFFIX,p0h1nfzc2.com,REJECT
+DOMAIN-SUFFIX,p7w3bmhmns.com,REJECT
+DOMAIN-SUFFIX,pzmu7go7i2.com,REJECT
+DOMAIN-SUFFIX,q2f3fw9st.com,REJECT
+DOMAIN-SUFFIX,q7vnwa1ma7.com,REJECT
+DOMAIN-SUFFIX,qa2bdtwm7h.com,REJECT
+DOMAIN-SUFFIX,qd32n9lpq.com,REJECT
+DOMAIN-SUFFIX,qim0lvk6m.com,REJECT
+DOMAIN-SUFFIX,qlplayerr.cyou,REJECT
+DOMAIN-SUFFIX,qs2zdat2pi.com,REJECT
+DOMAIN-SUFFIX,qxbpi331k.com,REJECT
+DOMAIN-SUFFIX,r30vhf31sv.com,REJECT
+DOMAIN-SUFFIX,rbru3ubey.com,REJECT
+DOMAIN-SUFFIX,reo682syw4.com,REJECT
+DOMAIN-SUFFIX,rhl8r3dkc.com,REJECT
+DOMAIN-SUFFIX,rib0nsgx6.com,REJECT
+DOMAIN-SUFFIX,rlr1ubj9u.com,REJECT
+DOMAIN-SUFFIX,rotovator44.top,REJECT
+DOMAIN-SUFFIX,rpgi979tlb.com,REJECT
+DOMAIN-SUFFIX,rwhyrlb8r2.com,REJECT
+DOMAIN-SUFFIX,s6cfki4v4.com,REJECT
+DOMAIN-SUFFIX,s7jkxkm72.com,REJECT
+DOMAIN-SUFFIX,sprinkler69.com,REJECT
+DOMAIN-SUFFIX,starboard65.com,REJECT
+DOMAIN-SUFFIX,stateroom28.com,REJECT
+DOMAIN-SUFFIX,su4wxsrtku.com,REJECT
+DOMAIN-SUFFIX,tek3shnfk.com,REJECT
+DOMAIN-SUFFIX,tftwrvvavlpjjq.com,REJECT
+DOMAIN-SUFFIX,thresher30.com,REJECT
+DOMAIN-SUFFIX,tightrope23.com,REJECT
+DOMAIN-SUFFIX,tofqldmutnvdda.com,REJECT
+DOMAIN-SUFFIX,trampoline12.com,REJECT
+DOMAIN-SUFFIX,u8jlui323.com,REJECT
+DOMAIN-SUFFIX,uzhrtuyij.com,REJECT
+DOMAIN-SUFFIX,v2e5kim4o.com,REJECT
+DOMAIN-SUFFIX,v7mf6q1mx.com,REJECT
+DOMAIN-SUFFIX,vbhbzhjaeudztw.com,REJECT
+DOMAIN-SUFFIX,vchhgjkbod.icu,REJECT
+DOMAIN-SUFFIX,vihiei5ek3.com,REJECT
+DOMAIN-SUFFIX,vkdytplocrhlhm.com,REJECT
+DOMAIN-SUFFIX,vljyztqsnkhvra.com,REJECT
+DOMAIN-SUFFIX,vwhhsovqtt.icu,REJECT
+DOMAIN-SUFFIX,winnower18.top,REJECT
+DOMAIN-SUFFIX,wkduza2x10.com,REJECT
+DOMAIN-SUFFIX,x8s007rgs.com,REJECT
+DOMAIN-SUFFIX,xdnjqtn.com,REJECT
+DOMAIN-SUFFIX,xhhgjfpswovlvg.com,REJECT
+DOMAIN-SUFFIX,xlljnxnyhrprhw.com,REJECT
+DOMAIN-SUFFIX,xmggucgmy.com,REJECT
+DOMAIN-SUFFIX,xtorbk1g3f.com,REJECT
+DOMAIN-SUFFIX,xvndpbjwhhvnfu.com,REJECT
+DOMAIN-SUFFIX,xwafoccqlr.icu,REJECT
+DOMAIN-SUFFIX,xxfjhbiuwyphdi.com,REJECT
+DOMAIN-SUFFIX,yrjxf61zb.com,REJECT
+DOMAIN-SUFFIX,ywxc.net,REJECT
+DOMAIN-SUFFIX,z1e78qjd2q.com,REJECT
+DOMAIN-SUFFIX,zbeh6v9jj.com,REJECT
+DOMAIN-SUFFIX,zellxviqqlhdpg.com,REJECT
+DOMAIN-SUFFIX,zhzrvjmyqvdhrc.com,REJECT
+DOMAIN-SUFFIX,zipobfrcbodrvq.com,REJECT
+DOMAIN-SUFFIX,zri2wv8u1.com,REJECT
+DOMAIN-SUFFIX,zv5h2l1qdi.com,REJECT
+
+# --- Reviewed source domain additions: AdBlock_lok.20261015 / 2026-10-15. ---
+# Source: EasyList China / The EasyList authors; GPL-3.0-or-later.
+# License: https://easylist.to/pages/licence.html
+# Compare: https://github.com/easylist/easylistchina/compare/4dc5164ae67682ba3b59a0903d80f2b1ec26ef3f...dcc067a21ac9628d117349303933efd0ddefa08e
+# Source-rule checks passed. Not tested on iPhone; mixed-service domains and ambiguous endpoints not auto-rejected.
+DOMAIN-SUFFIX,051ss3usg.com,REJECT
+DOMAIN-SUFFIX,0qry58i9es.com,REJECT
+DOMAIN-SUFFIX,1736js66.com,REJECT
+DOMAIN-SUFFIX,1jlbewhnp5.com,REJECT
+DOMAIN-SUFFIX,2mlt7jkbob.com,REJECT
+DOMAIN-SUFFIX,2w7urj3f2.com,REJECT
+DOMAIN-SUFFIX,3tv4botiq.com,REJECT
+DOMAIN-SUFFIX,3wrv1uzotr.com,REJECT
+DOMAIN-SUFFIX,42mu2c4akt.com,REJECT
+DOMAIN-SUFFIX,56pxywt379.com,REJECT
+DOMAIN-SUFFIX,5bfjvunmrp.com,REJECT
+DOMAIN-SUFFIX,6cq8d7xyk.com,REJECT
+DOMAIN-SUFFIX,6k1alauto.com,REJECT
+DOMAIN-SUFFIX,6px1vsaq0h.com,REJECT
+DOMAIN-SUFFIX,7istqn6fh.com,REJECT
+DOMAIN-SUFFIX,ado35vj3i.com,REJECT
+DOMAIN-SUFFIX,am3ydgq1h.com,REJECT
+DOMAIN-SUFFIX,awp8r0f7q.com,REJECT
+DOMAIN-SUFFIX,axkozwhiqah.in,REJECT
+DOMAIN-SUFFIX,bcmbmedbqx.icu,REJECT
+DOMAIN-SUFFIX,bcmbmedbqx.top,REJECT
+DOMAIN-SUFFIX,bdxwfvlszerxbi.com,REJECT
+DOMAIN-SUFFIX,bn067lnkrb.com,REJECT
+DOMAIN-SUFFIX,bphzzzguoqrnxu.com,REJECT
+DOMAIN-SUFFIX,c76us2sjda.com,REJECT
+DOMAIN-SUFFIX,conjuror45.com,REJECT
+DOMAIN-SUFFIX,contortionist08.com,REJECT
+DOMAIN-SUFFIX,csom844jkc.com,REJECT
+DOMAIN-SUFFIX,ctk8ifokyw.com,REJECT
+DOMAIN-SUFFIX,dabetlewtbdppi.com,REJECT
+DOMAIN-SUFFIX,dmlenpksrndflu.com,REJECT
+DOMAIN-SUFFIX,dn1pvim4v1.com,REJECT
+DOMAIN-SUFFIX,em4mzyvbiy.com,REJECT
+DOMAIN-SUFFIX,fizmvbysarrvva.com,REJECT
+DOMAIN-SUFFIX,fp0ao2bav.com,REJECT
+DOMAIN-SUFFIX,funambulist98.com,REJECT
+DOMAIN-SUFFIX,fz1j7l8n2.com,REJECT
+DOMAIN-SUFFIX,g2afpbshj.com,REJECT
+DOMAIN-SUFFIX,g2dgmgl9dy.com,REJECT
+DOMAIN-SUFFIX,g86a0qbf1h.com,REJECT
+DOMAIN-SUFFIX,gb742ld0c.com,REJECT
+DOMAIN-SUFFIX,gefxhyby9.com,REJECT
+DOMAIN-SUFFIX,hrmwxu.com,REJECT
+DOMAIN-SUFFIX,hxpfsdvfm.com,REJECT
+DOMAIN-SUFFIX,iemshbwfg.com,REJECT
+DOMAIN-SUFFIX,illusionist28.com,REJECT
+DOMAIN-SUFFIX,irgo28nc8b.com,REJECT
+DOMAIN-SUFFIX,jgp0ohuv2.com,REJECT
+DOMAIN-SUFFIX,jq5ls14m0.com,REJECT
+DOMAIN-SUFFIX,juggler36.com,REJECT
+DOMAIN-SUFFIX,k56y7oxb3x.com,REJECT
+DOMAIN-SUFFIX,leotard54.com,REJECT
+DOMAIN-SUFFIX,lh1tcfokni.com,REJECT
+DOMAIN-SUFFIX,lv3f2bqnb.com,REJECT
+DOMAIN-SUFFIX,ma9gqw1l4.com,REJECT
+DOMAIN-SUFFIX,magician29.com,REJECT
+DOMAIN-SUFFIX,mly5hvbae.com,REJECT
+DOMAIN-SUFFIX,mq82ovaqu.com,REJECT
+DOMAIN-SUFFIX,nar17stuqf.com,REJECT
+DOMAIN-SUFFIX,odzfjvbsd.com,REJECT
+DOMAIN-SUFFIX,pbeldhnbk.com,REJECT
+DOMAIN-SUFFIX,q9cu7eok92.com,REJECT
+DOMAIN-SUFFIX,qddlm.com,REJECT
+DOMAIN-SUFFIX,qkfywghv.com,REJECT
+DOMAIN-SUFFIX,qy4l27p9f.com,REJECT
+DOMAIN-SUFFIX,rt36a6gqfk.com,REJECT
+DOMAIN-SUFFIX,s17uqjk39o.com,REJECT
+DOMAIN-SUFFIX,t2f3pqd40.com,REJECT
+DOMAIN-SUFFIX,t8yctltd8s.com,REJECT
+DOMAIN-SUFFIX,tvhftcda.com,REJECT
+DOMAIN-SUFFIX,ventriloquist46.com,REJECT
+DOMAIN-SUFFIX,vfqhky3tos.com,REJECT
+DOMAIN-SUFFIX,vvs0eu66z.com,REJECT
+DOMAIN-SUFFIX,w19lu17a2.com,REJECT
+DOMAIN-SUFFIX,w4b52osbr5.com,REJECT
+DOMAIN-SUFFIX,w8n97pkzn6.com,REJECT
+DOMAIN-SUFFIX,wcu79k85a.com,REJECT
+DOMAIN-SUFFIX,x70wk5e54.com,REJECT
+DOMAIN-SUFFIX,xf80vxk3rc.com,REJECT
+DOMAIN-SUFFIX,xoqloz3tk.com,REJECT
+DOMAIN-SUFFIX,xrymwt5bap.com,REJECT
+DOMAIN-SUFFIX,xwpmbxdwlkrfzo.com,REJECT
+DOMAIN-SUFFIX,yilufff.com,REJECT
+DOMAIN-SUFFIX,zolcot122t.com,REJECT
+DOMAIN-SUFFIX,zr7f20uk8y.com,REJECT
+DOMAIN-SUFFIX,zsdrjjcqutdnja.com,REJECT
+DOMAIN-SUFFIX,zttrpnhufhdxno.com,REJECT
+DOMAIN-SUFFIX,zwg5j61a8.com,REJECT
+
+# --- Reviewed source domain additions: AdBlock_lok.20261023 / 2026-10-21 review. ---
+# Source: EasyList China / The EasyList authors, GPL-3.0-or-later.
+# Pinned source: 5917795aae3d190292c6b02a5bacbbb46feb4052.
+# Evidence: docs/reviews/2026-10-21.json. Source/conflict checks passed; iOS untested.
+DOMAIN-SUFFIX,039ijdlg8.com,REJECT
+DOMAIN-SUFFIX,0av9w1ubbh.com,REJECT
+DOMAIN-SUFFIX,0grzr3u2t.com,REJECT
+DOMAIN-SUFFIX,1nvnkyg65.com,REJECT
+DOMAIN-SUFFIX,1ovzgs15u.com,REJECT
+DOMAIN-SUFFIX,2bguv53rv.com,REJECT
+DOMAIN-SUFFIX,2haxnvf7i.com,REJECT
+DOMAIN-SUFFIX,313xidqu3.com,REJECT
+DOMAIN-SUFFIX,34148m9pq.com,REJECT
+DOMAIN-SUFFIX,4lqs5j3ckn.com,REJECT
+DOMAIN-SUFFIX,5cmog8sd8.com,REJECT
+DOMAIN-SUFFIX,5j01ouj0l.com,REJECT
+DOMAIN-SUFFIX,6mujth3wgx.com,REJECT
+DOMAIN-SUFFIX,7klc3u75r.com,REJECT
+DOMAIN-SUFFIX,804uptpbx.com,REJECT
+DOMAIN-SUFFIX,86k3uw8q98.com,REJECT
+DOMAIN-SUFFIX,89y84ta6xg.com,REJECT
+DOMAIN-SUFFIX,8icep0mqi.com,REJECT
+DOMAIN-SUFFIX,8kbg4gnw32.com,REJECT
+DOMAIN-SUFFIX,94gjh3cedn.com,REJECT
+DOMAIN-SUFFIX,9sgckbc7e.com,REJECT
+DOMAIN-SUFFIX,airsick32.com,REJECT
+DOMAIN-SUFFIX,b80wsvgkfc.com,REJECT
+DOMAIN-SUFFIX,ba5la9ccq.com,REJECT
+DOMAIN-SUFFIX,balcnzwmsjrbjs.com,REJECT
+DOMAIN-SUFFIX,bobztdbqdxrdng.com,REJECT
+DOMAIN-SUFFIX,bp44bqnvdb.com,REJECT
+DOMAIN-SUFFIX,cavalcade86.com,REJECT
+DOMAIN-SUFFIX,caxjro6f0.com,REJECT
+DOMAIN-SUFFIX,climbing77.com,REJECT
+DOMAIN-SUFFIX,cmn4xjgp67.com,REJECT
+DOMAIN-SUFFIX,dcfxk68sp2.com,REJECT
+DOMAIN-SUFFIX,dkphbpakvgftxm.com,REJECT
+DOMAIN-SUFFIX,dlfhhlfoguddba.com,REJECT
+DOMAIN-SUFFIX,do7gsv4xsf.com,REJECT
+DOMAIN-SUFFIX,eguswp0mj.com,REJECT
+DOMAIN-SUFFIX,eqcwxenk7.com,REJECT
+DOMAIN-SUFFIX,equestrian22.com,REJECT
+DOMAIN-SUFFIX,fhtmpftopdrllm.com,REJECT
+DOMAIN-SUFFIX,fsfptzxqdvvnze.com,REJECT
+DOMAIN-SUFFIX,geet3xanxc.com,REJECT
+DOMAIN-SUFFIX,iari2sq1ve.com,REJECT
+DOMAIN-SUFFIX,ib9hmq125v.com,REJECT
+DOMAIN-SUFFIX,iyyfj0g7m.com,REJECT
+DOMAIN-SUFFIX,jk8ineoqdj.com,REJECT
+DOMAIN-SUFFIX,jlulrz094u.com,REJECT
+DOMAIN-SUFFIX,lm1o9ejjs.com,REJECT
+DOMAIN-SUFFIX,mleqb8227.com,REJECT
+DOMAIN-SUFFIX,mqgxw8ng75.com,REJECT
+DOMAIN-SUFFIX,oit9wnhrp.com,REJECT
+DOMAIN-SUFFIX,p5jrngqnp.com,REJECT
+DOMAIN-SUFFIX,qt4wieces3.com,REJECT
+DOMAIN-SUFFIX,subtrahend70.com,REJECT
+DOMAIN-SUFFIX,tetrahedron55.com,REJECT
+DOMAIN-SUFFIX,txkepwuxr.com,REJECT
+DOMAIN-SUFFIX,v3ekghfm2l.com,REJECT
+DOMAIN-SUFFIX,velocity83.com,REJECT
+DOMAIN-SUFFIX,w6n00vtw6.com,REJECT
+DOMAIN-SUFFIX,x2w54giecw.com,REJECT
+DOMAIN-SUFFIX,xeb3x4yj4t.com,REJECT
+DOMAIN-SUFFIX,z5c4tnjw6p.com,REJECT
+DOMAIN-SUFFIX,zexudnxmjadlzg.com,REJECT
+
+[URL Rewrite]
+# Pangolin: block ad/config/material fetches, not telemetry batches.
+^https?:\/\/api-access\.pangolin-sdk-toutiao(?:\d+|-b)?\.com\/api\/ad\/union\/sdk\/get_ads\/ - reject-dict
+^https?:\/\/api-access\.pangolin-sdk-toutiao(?:\d+|-b)?\.com\/api\/ad\/union\/sdk\/settings\/ - reject-dict
+^https?:\/\/api\.pangolin-sdk-toutiao(?:\d+|-b)?\.com\/api\/ad\/union\/sdk\/get_ads\/ - reject-dict
+^https?:\/\/api\.pangolin-sdk-toutiao(?:\d+|-b)?\.com\/api\/ad\/union\/sdk\/settings\/ - reject-dict
+^https?:\/\/gromore\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/mediation\/(?:config|exchange)\/ - reject-dict
+^https?:\/\/ether-pack\.pangolin-sdk-toutiao\.com\/union\/endcard\/ - reject-200
+^https?:\/\/sf\d+-fe-tos\.pglstatp-toutiao\.com\/obj\/ad-pattern\/ - reject-200
+
+# GDT: block ad view/click payloads without rejecting the whole SDK domain.
+^https?:\/\/(?:mi|v2mi|win)\.gdt\.qq\.com\/gdt_(?:mview|view|click)\.fcg - reject-dict
+
+# High-confidence application ad endpoints.
+^https?:\/\/mobads\.baidu\.com\/.* - reject-dict
+^https?:\/\/afd\.baidu\.com\/afd\/entry - reject-dict
+^https?:\/\/optimus-ads\.amap\.com\/ - reject-200
+^https?:\/\/m\d\.amap\.com\/ws\/valueadded\/alimama\/splash_screen - reject-200
+^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/ - reject-200
+^https?:\/\/images\.pinduoduo\.com\/marketing_api - reject-200
+^https?:\/\/router-app-api\.jdcloud\.com\/v\d\/board\/routerAppSplash - reject-200
+^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ - reject-dict
+^https?:\/\/api\.chelaile\.net\.cn\/(?:adpub|goocity\/advert) - reject-dict
+^https?:\/\/web\.chelaile\.net\.cn\/api\/adpub - reject-dict
+^https?:\/\/app-gw\.csdn\.net\/cms-app\/v\d\/home_page\/open_advertisement - reject-dict
+^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject-dict
+^https?:\/\/ssp\.soulapp\.cn\/api\/q\? - reject-dict
+^https?:\/\/fuss10\.elemecdn\.com\/.+\.mp4 - reject-200
+
+[Script]
+AdBlock_Bilibili_Clean = type=http-response,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblock-clean.js,pattern=^https?:\/\/(?:app\.bili(?:bili\.com|api\.net)\/x\/(?:v2\/splash|v2\/feed\/index|resource\/show\/tab|resource\/patch\/tab|v2\/search|v2\/account\/mine)|api\.bilibili\.com\/x\/web-interface\/wbi\/index\/top\/feed\/rcmd|api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/dynamic_)
+AdBlock_Shopping_Clean = type=http-response,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblock-clean.js,pattern=^https?:\/\/(?:(?:acs|guide-acs)\.m\.taobao\.com\/gw\/mtop\.(?:taobao\.wireless\.home\.(?:splash|newface)\.awesome\.get|alibaba\.advertisementservice\.getadv|taobao\.idle\.home\.welcome|fliggy\.crm\.screen\.(?:allresource|predict))|acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlecommerce\.splash|poplayer\.template\.alibaba\.com\/\w+\.json|api\.m\.jd\.com\/.*(?:\?|&)functionId=(?:deliverLayer|homeAreaPop|home_launchConfig|lite_advertising|queryMaterialAdverts|smart_delivery_strategy|start|stationPullService|uniformRecommend\d*|welcomeHome)(?:&|$)|api\.(?:yangkeduo|pinduoduo)\.com\/api\/cappuccino\/(?:splash|querySplash))
+AdBlock_Zhihu_Clean = type=http-response,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblock-clean.js,pattern=^https?:\/\/(?:api\.zhihu\.com\/(?:commercial_api|fringe\/ad|topstory)|web-render\.zhihu\.com\/topstory\/recommend)
+AdBlock_Startup_Clean = type=http-response,requires-body=1,max-size=3145728,script-path=https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/scripts/adblock-clean.js,pattern=^https?:\/\/(?:wmapi\.meituan\.com\/api\/v\d+\/(?:loadInfo|startpicture)|[^/]+\.meituan\.com\/api\/v\d\/(?:openscreen|loadInfo|startpicture)|api\.xueqiu\.com\/(?:lightsnow|snowpard)\/|api\.mcd\.cn\/bff\/portal\/(?:home\/splash|richpop)|res\.kfc\.com\.cn\/advertisement|dynamicad\.kfc\.com\.cn\/api|m\d\.amap\.com\/ws\/(?:shield\/dsp\/app\/startup\/init|valueadded\/alimama\/splash_screen)|newclient\.map\.baidu\.com\/client\/(?:crossmarketing|push\/getPushMsg)|app\.58\.com\/api\/home\/(?:advertising|appadv|invite\/popupAdv))
+
+[MITM]
+enable = true
+hostname = %APPEND% app.bilibili.com,app.biliapi.net,api.bilibili.com,api.vc.bilibili.com,acs.m.taobao.com,guide-acs.m.taobao.com,acs.m.goofish.com,poplayer.template.alibaba.com,api.m.jd.com,api.yangkeduo.com,api.pinduoduo.com,api.zhihu.com,web-render.zhihu.com,wmapi.meituan.com,api.xueqiu.com,api.mcd.cn,res.kfc.com.cn,dynamicad.kfc.com.cn,m5.amap.com,newclient.map.baidu.com,app.58.com,api-access.pangolin-sdk-toutiao.com,api-access.pangolin-sdk-toutiao1.com,api-access.pangolin-sdk-toutiao-b.com,api.pangolin-sdk-toutiao.com,api.pangolin-sdk-toutiao1.com,api.pangolin-sdk-toutiao-b.com,gromore.pangolin-sdk-toutiao.com,ether-pack.pangolin-sdk-toutiao.com,sf3-fe-tos.pglstatp-toutiao.com,sf6-fe-tos.pglstatp-toutiao.com,mi.gdt.qq.com,v2mi.gdt.qq.com,win.gdt.qq.com,mobads.baidu.com,afd.baidu.com,optimus-ads.amap.com,amap-aos-info-nogw.amap.com,images.pinduoduo.com,router-app-api.jdcloud.com,ad.12306.cn,api.chelaile.net.cn,web.chelaile.net.cn,app-gw.csdn.net,gab.122.gov.cn,ssp.soulapp.cn,fuss10.elemecdn.com
+h2 = true
