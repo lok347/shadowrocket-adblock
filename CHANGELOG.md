@@ -1,5 +1,18 @@
 # Changelog
 
+## AdBlock_lok.20261023 — 2026-10-23
+
+### Added
+- 基于 2026-10-21 自动审查 Draft PR #8 和人工核验，向稳定模块新增 62 条 EasyList China 无条件 `||domain^` 规则，以 `DOMAIN-SUFFIX,REJECT` 实现。
+- 来源锁定：`easylist/easylistchina` commit `5917795aae3d190292c6b02a5bacbbb46feb4052`；对应审查记录 `docs/reviews/2026-10-21.{md,json}`、`rules/candidates/2026-10-21.list`。
+- 核验范围：逐条确认新增条目存在于固定来源而不在上一基线；无重复；无本地 DIRECT guard、AWAvenue 覆盖或来源例外冲突。同期来源撤回 6 条，均非本地静态 REJECT，本期无需删除。
+
+### Preserved and risks
+- 保留原有 DIRECT、社区 RULE-SET、URL Rewrite、MITM、Response Cleaner 及 iOS 捷径；固定订阅入口与 `Shadowrocket-AdBlock-lok.20261023.sgmodule` 内容必须一致。
+- 仅通过规则和来源校验，未做 iPhone / App 实机回归测试；上游收录不代表已独立验证纯广告用途。出现启动或业务功能异常时应按 `docs/MAINTENANCE.md` 回滚。
+- 发布获得仓库所有者 2026-10-23 的明确授权；候选审查不代表以后自动发布的长期授权。
+
+
 ## AdBlock_lok.20261015 — 2026-10-15
 
 ### Added
