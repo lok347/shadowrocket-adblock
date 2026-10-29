@@ -1,5 +1,18 @@
 # Changelog
 
+## AdBlock_lok.20261029 — 2026-10-29
+
+### Added
+- 已归档 2026-10-28 GitHub Actions 候选审查（PR #10）；稳定版新增 74 条 EasyList China 无条件 `||domain^` 规则，并转换为 `DOMAIN-SUFFIX,REJECT`。
+- 来源锁定：`easylist/easylistchina` commit `ef624b775f18035510632920d7910094b282ce83`；见 `docs/reviews/2026-10-28.{md,json}` 与 `rules/candidates/2026-10-28.list`。
+- 75 条候选均通过来源增量、去重、AWAvenue 覆盖、原有 DIRECT guard、来源例外检查；保留 `jieshengsz.com` 待进一步识别，防止可能的业务网站被整个域名误拦截。实发 74 条。
+
+### Preserved and risks
+- 完全保留原 DIRECT guards、AWAvenue RULE-SET、URL Rewrite、MITM、`scripts/adblock-clean.js`、iOS 捷径；稳定入口和日期归档必须逐字节相同。
+- 仅完成规则层校验，**未做 iPhone / Shadowrocket 实机回归**；不保证具体 App 的广告被全部清除，也不保证零误杀。如出现 App 启动/登录/业务页面异常，按 `docs/MAINTENANCE.md` 通过 Git 历史回退至 `AdBlock_lok.20261023`。
+- 本次稳定版发布来自 2026-10-29 用户明确指令；每周自动扫描仍只创建待审查 PR，后续不自动发布未经审核的规则。
+
+
 ## AdBlock_lok.20261023 — 2026-10-23
 
 ### Added

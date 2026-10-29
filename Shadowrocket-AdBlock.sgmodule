@@ -1,5 +1,5 @@
-#!name=AdBlock_lok.20261023
-#!desc=Layered blocking: DIRECT guards -> AWAvenue RULE-SET -> static fallback -> precise rewrites -> allowlisted cleaning. +62 reviewed domain rules (2026-10-23); untested on iOS.
+#!name=AdBlock_lok.20261029
+#!desc=Layered blocking: DIRECT guards -> AWAvenue RULE-SET -> static fallback -> precise rewrites -> allowlisted cleaning. +74 reviewed domain rules (2026-10-29); untested on iOS.
 #!author=Y123456-hzy (upstream); lok347 (maintenance)
 #!homepage=https://github.com/lok347/shadowrocket-adblock
 #!system=ios
@@ -433,6 +433,87 @@ DOMAIN-SUFFIX,x2w54giecw.com,REJECT
 DOMAIN-SUFFIX,xeb3x4yj4t.com,REJECT
 DOMAIN-SUFFIX,z5c4tnjw6p.com,REJECT
 DOMAIN-SUFFIX,zexudnxmjadlzg.com,REJECT
+
+# --- Reviewed source domain additions: AdBlock_lok.20261029 / 2026-10-28 review. ---
+# Source: EasyList China / The EasyList authors; GPL-3.0-or-later.
+# Pinned source: ef624b775f18035510632920d7910094b282ce83.
+# Evidence: docs/reviews/2026-10-28.json and PR #10.
+# Source/conflict checks passed; 74 accepted; jieshengsz.com held for ambiguity.
+# No iOS/Shadowrocket device or in-app regression test was performed.
+DOMAIN-SUFFIX,0nh9bt6v6a.com,REJECT
+DOMAIN-SUFFIX,1a7pxa2r7.com,REJECT
+DOMAIN-SUFFIX,1nrgur4y43.com,REJECT
+DOMAIN-SUFFIX,2x3le64mm.com,REJECT
+DOMAIN-SUFFIX,3jkb97w0tp.com,REJECT
+DOMAIN-SUFFIX,3rev8wh22y.com,REJECT
+DOMAIN-SUFFIX,3sbbnyzps.com,REJECT
+DOMAIN-SUFFIX,47f9jdixm7.com,REJECT
+DOMAIN-SUFFIX,490i1rrbd.com,REJECT
+DOMAIN-SUFFIX,4k4zbfclm.com,REJECT
+DOMAIN-SUFFIX,5wczjm7h4.com,REJECT
+DOMAIN-SUFFIX,9kos5nsw7.com,REJECT
+DOMAIN-SUFFIX,9mnmzh506.com,REJECT
+DOMAIN-SUFFIX,b2rqwuqzea.com,REJECT
+DOMAIN-SUFFIX,bc4zqavx5d.com,REJECT
+DOMAIN-SUFFIX,c5i6rfwyf.com,REJECT
+DOMAIN-SUFFIX,cbxp9xqbnh.com,REJECT
+DOMAIN-SUFFIX,ddwododotg.com,REJECT
+DOMAIN-SUFFIX,dv4o54c8p.com,REJECT
+DOMAIN-SUFFIX,dvtkppqczzfhpk.com,REJECT
+DOMAIN-SUFFIX,dwzhvtvgknfjty.com,REJECT
+DOMAIN-SUFFIX,fireplace32.com,REJECT
+DOMAIN-SUFFIX,fitment47.com,REJECT
+DOMAIN-SUFFIX,fsxpdfugtwrzde.com,REJECT
+DOMAIN-SUFFIX,ftdpjbzkeprjhs.com,REJECT
+DOMAIN-SUFFIX,fyi1v4fcw3.com,REJECT
+DOMAIN-SUFFIX,fzbaqs9f1.com,REJECT
+DOMAIN-SUFFIX,gdfzcez6q.com,REJECT
+DOMAIN-SUFFIX,gi7n1lmo4o.com,REJECT
+DOMAIN-SUFFIX,gzq7cji8e.com,REJECT
+DOMAIN-SUFFIX,h4z2ko7lb.com,REJECT
+DOMAIN-SUFFIX,hdhuxrsiymfbvs.com,REJECT
+DOMAIN-SUFFIX,hpbxrvnentfrre.com,REJECT
+DOMAIN-SUFFIX,i0gh0cpwb.com,REJECT
+DOMAIN-SUFFIX,i9oyj14fq.com,REJECT
+DOMAIN-SUFFIX,ifvk56ft9o.com,REJECT
+DOMAIN-SUFFIX,iotj6oo90.com,REJECT
+DOMAIN-SUFFIX,iowj5jof2.com,REJECT
+DOMAIN-SUFFIX,j59g6ff5k.com,REJECT
+DOMAIN-SUFFIX,jzvchdrihqrrfy.com,REJECT
+DOMAIN-SUFFIX,ld1qwww3kj.com,REJECT
+DOMAIN-SUFFIX,lezplamgzs.com,REJECT
+DOMAIN-SUFFIX,lgfktruknrjbxc.com,REJECT
+DOMAIN-SUFFIX,ljyzic8cr.com,REJECT
+DOMAIN-SUFFIX,lmbmr7zw3.com,REJECT
+DOMAIN-SUFFIX,m5i3wtd2s6.com,REJECT
+DOMAIN-SUFFIX,n5ku61z6km.com,REJECT
+DOMAIN-SUFFIX,njblnwm2ii.com,REJECT
+DOMAIN-SUFFIX,nxynjy2kej.com,REJECT
+DOMAIN-SUFFIX,nxyzabhy3.com,REJECT
+DOMAIN-SUFFIX,o35jufwu6.com,REJECT
+DOMAIN-SUFFIX,o522zsxbgf.com,REJECT
+DOMAIN-SUFFIX,p1oo54kz6d.com,REJECT
+DOMAIN-SUFFIX,p5regbg09.com,REJECT
+DOMAIN-SUFFIX,pwdh28pof.com,REJECT
+DOMAIN-SUFFIX,qf21yrnmnk.com,REJECT
+DOMAIN-SUFFIX,rx7pi9v1x.com,REJECT
+DOMAIN-SUFFIX,secretaire97.com,REJECT
+DOMAIN-SUFFIX,ssi1gqcx0m.com,REJECT
+DOMAIN-SUFFIX,statistics46.com,REJECT
+DOMAIN-SUFFIX,t1ufw6nz5f.com,REJECT
+DOMAIN-SUFFIX,t9j3lrvrv.com,REJECT
+DOMAIN-SUFFIX,toaster22.com,REJECT
+DOMAIN-SUFFIX,tt5omubqh.com,REJECT
+DOMAIN-SUFFIX,tuxcpf6pq.com,REJECT
+DOMAIN-SUFFIX,unqm8c9dfk.com,REJECT
+DOMAIN-SUFFIX,vm1mmq2h1.com,REJECT
+DOMAIN-SUFFIX,vqnvib2h7e.com,REJECT
+DOMAIN-SUFFIX,vuhhryua.com,REJECT
+DOMAIN-SUFFIX,vyq5segjv.com,REJECT
+DOMAIN-SUFFIX,whistle88.com,REJECT
+DOMAIN-SUFFIX,x781w71m0j.com,REJECT
+DOMAIN-SUFFIX,xf9o6c6jnp.com,REJECT
+DOMAIN-SUFFIX,y3yuih3s1.com,REJECT
 
 [URL Rewrite]
 # Pangolin: block ad/config/material fetches, not telemetry batches.
