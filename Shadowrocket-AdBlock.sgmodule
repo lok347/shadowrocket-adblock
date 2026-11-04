@@ -1,5 +1,5 @@
-#!name=AdBlock_lok.20261029
-#!desc=Layered blocking: DIRECT guards -> AWAvenue RULE-SET -> static fallback -> precise rewrites -> allowlisted cleaning. +74 reviewed domain rules (2026-10-29); untested on iOS.
+#!name=AdBlock_lok.20261104
+#!desc=Layered blocking: DIRECT guards -> AWAvenue RULE-SET -> static fallback -> precise rewrites -> allowlisted cleaning. +70 reviewed domain rules (2026-11-04); untested on iOS.
 #!author=Y123456-hzy (upstream); lok347 (maintenance)
 #!homepage=https://github.com/lok347/shadowrocket-adblock
 #!system=ios
@@ -514,6 +514,83 @@ DOMAIN-SUFFIX,whistle88.com,REJECT
 DOMAIN-SUFFIX,x781w71m0j.com,REJECT
 DOMAIN-SUFFIX,xf9o6c6jnp.com,REJECT
 DOMAIN-SUFFIX,y3yuih3s1.com,REJECT
+
+# --- Reviewed source domain additions: AdBlock_lok.20261104 / 2026-11-04 review. ---
+# Source: EasyList China / The EasyList authors; GPL-3.0-or-later.
+# Pinned source: 63567f7ac9c204c43a2170ca1232574957b78cad.
+# Evidence: docs/reviews/2026-11-04.json and PR #12.
+# Source/dedup/guard/exception/coverage checks passed; 70 accepted.
+# No iOS/Shadowrocket device or in-app regression test was performed.
+DOMAIN-SUFFIX,08137tabw.com,REJECT
+DOMAIN-SUFFIX,0r5e0xvwes.com,REJECT
+DOMAIN-SUFFIX,0xxbtt1ov.com,REJECT
+DOMAIN-SUFFIX,1chtx8re2.com,REJECT
+DOMAIN-SUFFIX,1nvxl968le.com,REJECT
+DOMAIN-SUFFIX,1ny5gaksj8.com,REJECT
+DOMAIN-SUFFIX,20ml7x2sk.com,REJECT
+DOMAIN-SUFFIX,22n5xlc6n0.com,REJECT
+DOMAIN-SUFFIX,487wlz7nbc.com,REJECT
+DOMAIN-SUFFIX,4l0h5xxoc.com,REJECT
+DOMAIN-SUFFIX,4m0tg6axs.com,REJECT
+DOMAIN-SUFFIX,5p478n58i9.com,REJECT
+DOMAIN-SUFFIX,5qnyx6k5w.com,REJECT
+DOMAIN-SUFFIX,60cxjeiyq.com,REJECT
+DOMAIN-SUFFIX,6a4oabslx.com,REJECT
+DOMAIN-SUFFIX,6iwulft12t.com,REJECT
+DOMAIN-SUFFIX,7hc5zpcv6.com,REJECT
+DOMAIN-SUFFIX,9v0ptnfes.com,REJECT
+DOMAIN-SUFFIX,a8ougj16a.com,REJECT
+DOMAIN-SUFFIX,barstool59.com,REJECT
+DOMAIN-SUFFIX,bookshelf07.com,REJECT
+DOMAIN-SUFFIX,bshhyxoy62.com,REJECT
+DOMAIN-SUFFIX,cupboard40.com,REJECT
+DOMAIN-SUFFIX,d3h02f4xol.com,REJECT
+DOMAIN-SUFFIX,ec2ic6ew5k.com,REJECT
+DOMAIN-SUFFIX,electrician25.com,REJECT
+DOMAIN-SUFFIX,ezaudueu6.com,REJECT
+DOMAIN-SUFFIX,fdseb8s0y.com,REJECT
+DOMAIN-SUFFIX,fmnmuuo7c.com,REJECT
+DOMAIN-SUFFIX,frhsxjpciitptq.com,REJECT
+DOMAIN-SUFFIX,fwbvjxsmvznfpu.com,REJECT
+DOMAIN-SUFFIX,gssaga13g.com,REJECT
+DOMAIN-SUFFIX,gtkgxcfx5f.com,REJECT
+DOMAIN-SUFFIX,holxlriacffphq.com,REJECT
+DOMAIN-SUFFIX,htfaxfwqywzfdo.com,REJECT
+DOMAIN-SUFFIX,inequation23.com,REJECT
+DOMAIN-SUFFIX,itkdb58mo.com,REJECT
+DOMAIN-SUFFIX,jlpfbhmefcthbk.com,REJECT
+DOMAIN-SUFFIX,jptifzvqhanvha.com,REJECT
+DOMAIN-SUFFIX,k6p5kaelz.com,REJECT
+DOMAIN-SUFFIX,ka9gcc8ifd.com,REJECT
+DOMAIN-SUFFIX,kca7afgqg.com,REJECT
+DOMAIN-SUFFIX,lgh8ua4fj.com,REJECT
+DOMAIN-SUFFIX,lmxnthoobcznvu.com,REJECT
+DOMAIN-SUFFIX,m2fnnugqp.com,REJECT
+DOMAIN-SUFFIX,mebqlxk7o.com,REJECT
+DOMAIN-SUFFIX,mgu14s8c5h.com,REJECT
+DOMAIN-SUFFIX,mzzueflt.com,REJECT
+DOMAIN-SUFFIX,ndhfz9zw2.com,REJECT
+DOMAIN-SUFFIX,nq6jitu4y.com,REJECT
+DOMAIN-SUFFIX,o9m5znv8ta.com,REJECT
+DOMAIN-SUFFIX,p0m1qlvawp.com,REJECT
+DOMAIN-SUFFIX,q70t79hxor.com,REJECT
+DOMAIN-SUFFIX,qty00vcqh8.com,REJECT
+DOMAIN-SUFFIX,r7aon5a2a.com,REJECT
+DOMAIN-SUFFIX,refrigerator16.com,REJECT
+DOMAIN-SUFFIX,rgt8qby8k.com,REJECT
+DOMAIN-SUFFIX,romwdc1mv.com,REJECT
+DOMAIN-SUFFIX,sf5yzh4yqz.com,REJECT
+DOMAIN-SUFFIX,tableware66.com,REJECT
+DOMAIN-SUFFIX,uvaf6ko09w.com,REJECT
+DOMAIN-SUFFIX,uxee5bmf1k.com,REJECT
+DOMAIN-SUFFIX,v0v9ko8q4.com,REJECT
+DOMAIN-SUFFIX,v62hjyw4o.com,REJECT
+DOMAIN-SUFFIX,vfbbxi2ap.com,REJECT
+DOMAIN-SUFFIX,vfmlgaxxc4.com,REJECT
+DOMAIN-SUFFIX,w6v754e1uw.com,REJECT
+DOMAIN-SUFFIX,wxylxfmqd.com,REJECT
+DOMAIN-SUFFIX,xkp30u4pxh.com,REJECT
+DOMAIN-SUFFIX,ysy5uobifs.com,REJECT
 
 [URL Rewrite]
 # Pangolin: block ad/config/material fetches, not telemetry batches.
