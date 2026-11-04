@@ -1,5 +1,17 @@
 # Changelog
 
+## AdBlock_lok.20261104 — 2026-11-04
+
+### Added
+- 经 2026-11-04 GitHub Actions 候选审查 PR #12（已合并审查记录）及独立复核，正式模块新增 70 条 EasyList China 无条件 `||domain^`，转换为 `DOMAIN-SUFFIX,REJECT`。
+- 固定上游来源：`easylist/easylistchina` commit `63567f7ac9c204c43a2170ca1232574957b78cad`，blob `7359ab540ae3c8e8f9d26688d224887cfd890870`；相较 2026-10-28 commit `ef624b775f18035510632920d7910094b282ce83` 新增 70、撤回 0。
+- 对 70 条规则逐条验证来源原文、无条件匹配、唯一性与相对旧版的新增；本地已有 REJECT 覆盖 0、DIRECT 冲突 0、AWAvenue 覆盖 0、上游例外冲突 0。留存 `docs/reviews/2026-11-04.{md,json}` 以及 `rules/candidates/2026-11-04.list`。
+
+### Preserved and risks
+- 原 DIRECT guards、社区 RULE-SET、URL Rewrite、MITM、响应清理脚本 `scripts/adblock-clean.js` 与 iOS 捷径保持原样；稳定入口 `Shadowrocket-AdBlock.sgmodule` 与日期归档 `Shadowrocket-AdBlock-lok.20261104.sgmodule` 必须逐字节相同。
+- **未做 iPhone/Shadowrocket 实机测试。** 过滤源收录和冲突检查不能证明所有域名仅用于广告，也不保证没有误杀；若遇到启动/登录/加载异常，按 `docs/MAINTENANCE.md` 以 Git 历史回滚到 `AdBlock_lok.20261029`。
+- 本次发布依据用户 2026-11-04 明确授权；每周自动扫描仍只生成候选 Draft PR，不获准自行发布。
+
 ## AdBlock_lok.20261029 — 2026-10-29
 
 ### Added
