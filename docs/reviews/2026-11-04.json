@@ -1,0 +1,680 @@
+{
+  "schema_version": 2,
+  "review_date": "2026-11-04",
+  "status": "review_only_unpublished",
+  "baseline_review": "2026-10-28.json",
+  "sources": {
+    "easylist_china": {
+      "repository": "easylist/easylistchina",
+      "path": "easylistchina.txt",
+      "head_commit": "63567f7ac9c204c43a2170ca1232574957b78cad",
+      "blob_sha": "7359ab540ae3c8e8f9d26688d224887cfd890870",
+      "base_commit": "ef624b775f18035510632920d7910094b282ce83",
+      "license": "GPL-3.0-or-later (https://easylist.to/pages/licence.html)"
+    },
+    "awa": {
+      "repository": "TG-Twilight/AWAvenue-Ads-Rule",
+      "path": "Filters/AWAvenue-Ads-Rule-Surge-RULE-SET.list",
+      "head_commit": "72dd30fb6d5e2ff7b5bcdbecf164d288f41d9dfa",
+      "blob_sha": "4240492868c9d7946ac83c9f7e02aa46573bbfd1"
+    },
+    "easylist": {
+      "repository": "easylist/easylist",
+      "path": "easylist/easylist_adservers.txt",
+      "head_commit": "af10516cd368999c13fe5816acbd95508a17db03",
+      "blob_sha": "aed41931362c0a30f89d019d2e9f4836ea94559e"
+    }
+  },
+  "counts": {
+    "upstream_added": 70,
+    "upstream_removed": 0,
+    "ready_for_review": 70,
+    "already_covered_locally": 0,
+    "covered_by_awa": 0,
+    "guard_conflicts": 0,
+    "source_exception_conflicts": 0
+  },
+  "upstream_removed_domains": [],
+  "removed_still_rejected_locally": [],
+  "awa_removed_rules": [],
+  "new_easylist_china_exceptions": [],
+  "new_exceptions_affecting_local_reject": [],
+  "candidates": [
+    {
+      "domain": "08137tabw.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "0r5e0xvwes.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "0xxbtt1ov.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "1chtx8re2.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "1nvxl968le.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "1ny5gaksj8.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "20ml7x2sk.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "22n5xlc6n0.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "487wlz7nbc.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "4l0h5xxoc.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "4m0tg6axs.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "5p478n58i9.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "5qnyx6k5w.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "60cxjeiyq.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "6a4oabslx.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "6iwulft12t.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "7hc5zpcv6.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "9v0ptnfes.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "a8ougj16a.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "barstool59.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "bookshelf07.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "bshhyxoy62.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "cupboard40.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "d3h02f4xol.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "ec2ic6ew5k.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "electrician25.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "ezaudueu6.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "fdseb8s0y.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "fmnmuuo7c.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "frhsxjpciitptq.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "fwbvjxsmvznfpu.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "gssaga13g.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "gtkgxcfx5f.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "holxlriacffphq.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "htfaxfwqywzfdo.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "inequation23.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "itkdb58mo.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "jlpfbhmefcthbk.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "jptifzvqhanvha.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "k6p5kaelz.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "ka9gcc8ifd.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "kca7afgqg.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "lgh8ua4fj.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "lmxnthoobcznvu.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "m2fnnugqp.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "mebqlxk7o.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "mgu14s8c5h.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "mzzueflt.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "ndhfz9zw2.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "nq6jitu4y.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "o9m5znv8ta.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "p0m1qlvawp.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "q70t79hxor.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "qty00vcqh8.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "r7aon5a2a.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "refrigerator16.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "rgt8qby8k.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "romwdc1mv.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "sf5yzh4yqz.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "tableware66.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "uvaf6ko09w.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "uxee5bmf1k.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "v0v9ko8q4.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "v62hjyw4o.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "vfbbxi2ap.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "vfmlgaxxc4.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "w6v754e1uw.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "wxylxfmqd.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "xkp30u4pxh.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    },
+    {
+      "domain": "ysy5uobifs.com",
+      "source": "easylist_china",
+      "rule_type": "DOMAIN-SUFFIX",
+      "also_listed_by_easylist": false,
+      "guard_conflicts": [],
+      "source_exception_conflicts": [],
+      "decision": "candidate_only_unverified"
+    }
+  ],
+  "limitations": [
+    "No iOS/Shadowrocket device verification was performed.",
+    "Community lists are candidate evidence, not proof of exclusive advertising use.",
+    "No stable module, script, MITM or Rewrite changes were made.",
+    "AWAvenue is currently referenced dynamically by the stable module; this review does not pin it."
+  ]
+}
