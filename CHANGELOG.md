@@ -1,5 +1,16 @@
 # Changelog
 
+## AdBlock_lok.20261119 — 2026-11-19
+
+### Added
+- 经 2026-11-19 用户明确授权，一次补齐 11 月 11 日和 18 日增量，发布 153 条 EasyList China 无条件 `||domain^` 域名规则；11 月 11 日的 86 条均包含在本期，不重复加入。
+- 固定来源 commit `297ba1e483a2d1162f403fd72ac0deacf35daeca`、blob `251837cac9b586894da3077a667e00e9e25e882d`；上一稳定基线 commit `63567f7ac9c204c43a2170ca1232574957b78cad`。独立核对来源差集恰为 153 条，候选清单与 JSON 一致；域名格式、去重、本地 DIRECT/REJECT、AWAvenue 域名覆盖及上游例外检查未发现冲突。上游撤回 2 条，自动报告显示均未在本地拦截。
+- 保留两期原始候选审查文档与清单（其历史状态仍为仅审查），本日志记录最终发布决定。
+
+### Preserved and risks
+- 原 DIRECT、RULE-SET、URL Rewrite、MITM、Cleaner 与 iOS 捷径完全不变；固定入口与本期日期归档使用相同内容。
+- 未执行 iPhone/Shadowrocket 实机测试；来源收录不证明域名只用于广告，若有误杀可回退到 AdBlock_lok.20261104。每周自动任务仍仅生成候选，未经授权不自动发布。
+
 ## AdBlock_lok.20261104 — 2026-11-04
 
 ### Added

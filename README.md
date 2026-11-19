@@ -2,11 +2,11 @@
 
 Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
-当前稳定版本：**AdBlock_lok.20261104**
+当前稳定版本：**AdBlock_lok.20261119**
 
 当前 upstream 基线：**GY AdBlock v6.2**
 
-2026-11-04 稳定版发布：基于今日自动审查 PR #12 及独立来源复核，新增 70 条 EasyList China 无条件 `||domain^` 规则，转换为 `DOMAIN-SUFFIX,REJECT`。与固定来源的前一基线逐条比对，重复、DIRECT guard、现有静态 REJECT、AWAvenue 覆盖及上游例外检查均无冲突；未改变原 Rewrite、MITM、Cleaner 或 iOS 捷径。**未执行 iPhone/Shadowrocket 实机回归，仍有误杀风险。** 见 `docs/reviews/2026-11-04.md`、`CHANGELOG.md`。
+2026-11-19 稳定版发布：合并 11 月 11 日及 18 日的候选增量，共新增 153 条 EasyList China 无条件域名 REJECT（含上周全部 86 条）。独立核对固定上游来源差集、重复、DIRECT guard、静态 REJECT、AWAvenue 覆盖及来源例外，未发现冲突。原 Rewrite、MITM、Cleaner 与 iOS 捷径保持不变。**未执行 iPhone/Shadowrocket 实机回归，仍有误杀风险。** 见 `docs/reviews/2026-11-18.md` 与 `CHANGELOG.md`。
 
 ## 来源与维护关系
 
@@ -21,7 +21,7 @@ Lok 自用的 Shadowrocket 去广告规则维护仓库。
 
 本期日期文件：
 
-https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-AdBlock-lok.20261104.sgmodule
+https://raw.githubusercontent.com/lok347/shadowrocket-adblock/main/Shadowrocket-AdBlock-lok.20261119.sgmodule
 
 固定订阅入口（每次与最新日期文件同步）：
 
@@ -110,7 +110,7 @@ shadowrocket://install?module=https%3A%2F%2Fraw.githubusercontent.com%2Flok347%2
 
 ## 文件
 
-- `Shadowrocket-AdBlock-lok.20261029.sgmodule`：本期稳定模块，日期格式 `YYYYMMDD`
+- `Shadowrocket-AdBlock-lok.20261119.sgmodule`：本期稳定模块，日期格式 `YYYYMMDD`
 - `Shadowrocket-AdBlock.sgmodule`：固定订阅入口，与最新日期文件内容一致
 - `scripts/adblock-clean.js`：响应清理脚本
 - `CHANGELOG.md`：本仓库变更记录
